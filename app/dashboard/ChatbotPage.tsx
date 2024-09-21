@@ -86,7 +86,7 @@ const Chatbot: React.FC = () => {
       }}
     >
       {" "}
-      <div className="p-6 bg-white rounded-lg shadow-lg w-full w-1/2 -mt-12">
+      <div className="p-6 bg-white rounded-lg shadow-lg w-1/2 -mt-12">
         <h1 className="text-xl font-semibold mb-4 text-left text-indigo-600">
           Welcome to Our Friendly AI ChatBot, Nuro
         </h1>

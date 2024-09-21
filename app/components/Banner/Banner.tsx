@@ -24,7 +24,7 @@ const Banner = () => {
                 </button>
               </Link>
               <button className="bg-purple w-full hover:bg-[#CE90C8] text-white font-bold py-4 px-3 rounded">
-                Sign Up
+                <a href="/api/auth/login">Sign Up</a>
               </button>
             </div>
           </div>

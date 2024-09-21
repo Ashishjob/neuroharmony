@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "./QuizPage.css"; // Import the CSS file
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const QuizPage: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -35,7 +35,7 @@ const QuizPage: React.FC = () => {
       setCurrentQuestion(currentQuestion + 1);
     }
   };
-  
+
   const handlePreviousQuestion = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
@@ -57,99 +57,128 @@ const QuizPage: React.FC = () => {
   };
 
   return (
-    <div className="p-4 h-screen">
-      <h1 className="text-4xl mb-4">The Quiz</h1>
-      <input
-        title="progress"
-        type="range"
-        min="0"
-        max="100"
-        value={progress}
-        readOnly
-        className="w-full h-4 mb-4 transition-all duration-500 ease-in-out pastel-rainbow"
-        style={progressBarStyle}
-      />
-      <div className="text-center w-full py-32">
-        <p className="mb-4 items-center text-3xl mt-24">{questions[currentQuestion]}</p>
-        <div className="mb-4 flex flex-row justify-center space-x-4 items-center">
-          <label className="flex flex-row block items-center">
-            <span className="mr-4">Always</span>
-            <label className="styled-big-radio-l items-center hover:cursor-pointer" htmlFor="answer1">
+    <div
+      className="p-4 h-screen"
+      style={{
+        backgroundImage: "url('/assets/banner/quiz-background.jpeg')",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="p-2 rounded-lg">
+        <h1 className="text-4xl mb-4">The Quiz</h1>
+        <input
+          title="progress"
+          type="range"
+          min="0"
+          max="100"
+          value={progress}
+          readOnly
+          className="w-full h-4 mb-4 transition-all duration-500 ease-in-out pastel-rainbow"
+          style={progressBarStyle}
+        />
+      </div>
+      <div className="flex flex-row justify-center w-full mt-16 rounded-xl">
+        <div className="text-center bg-white rounded-xl w-3/5 px-24 py-24">
+          <p className="mb-4 items-center text-3xl mt-24">
+            {questions[currentQuestion]}
+          </p>
+          <div className="mb-4 flex flex-row justify-center space-x-4 items-center">
+            <label className="flex flex-row block items-center">
+              <span className="mr-4">Always</span>
+              <label
+                className="styled-big-radio-l items-center hover:cursor-pointer"
+                htmlFor="answer1"
+              >
+                <input
+                  id="answer1"
+                  type="radio"
+                  name="answer"
+                  value="1"
+                  checked={answers[currentQuestion] === 1}
+                  onChange={handleAnswerChange}
+                />
+                <span></span>
+              </label>
+            </label>
+            <label
+              className="styled-medium-radio-l items-center hover:cursor-pointer"
+              htmlFor="answer2"
+            >
               <input
-                id="answer1"
+                id="answer2"
                 type="radio"
                 name="answer"
-                value="1"
-                checked={answers[currentQuestion] === 1}
+                value="2"
+                checked={answers[currentQuestion] === 2}
                 onChange={handleAnswerChange}
               />
               <span></span>
             </label>
-          </label>
-          <label className="styled-medium-radio-l items-center hover:cursor-pointer" htmlFor="answer2">
-            <input
-              id="answer2"
-              type="radio"
-              name="answer"
-              value="2"
-              checked={answers[currentQuestion] === 2}
-              onChange={handleAnswerChange}
-            />
-            <span></span>
-          </label>
-          <label className="styled-small-radio items-center hover:cursor-pointer" htmlFor="answer3">
-            <input
-              id="answer3"
-              type="radio"
-              name="answer"
-              value="3"
-              checked={answers[currentQuestion] === 3}
-              onChange={handleAnswerChange}
-            />
-            <span></span>
-          </label>
-          <label className="styled-medium-radio-r items-center hover:cursor-pointer" htmlFor="answer4">
-            <input
-              id="answer4"
-              type="radio"
-              name="answer"
-              value="4"
-              checked={answers[currentQuestion] === 4}
-              onChange={handleAnswerChange}
-            />
-            <span></span>
-          </label>
-          <label className="styled-big-radio-r items-center hover:cursor-pointer" htmlFor="answer5">
-            <input
-              id="answer5"
-              type="radio"
-              name="answer"
-              value="5"
-              checked={answers[currentQuestion] === 5}
-              onChange={handleAnswerChange}
-            />
-            <span></span>
-          </label>
-          <span className="ml-4">Never</span>
-        </div>
-        <div className="flex justify-center space-x-4">
-          <button
-            onClick={handlePreviousQuestion}
-            disabled={currentQuestion === 0}
-            className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
-          >
-            <FaArrowLeft />
-          </button>
-          <button
-            onClick={handleNextQuestion}
-            disabled={
-              currentQuestion === questions.length - 1 ||
-              answers[currentQuestion] === -1
-            }
-            className="px-4 py-2 bg-blue-500 rounded disabled:opacity-50"
-          >
-            <FaArrowRight />
-          </button>
+            <label
+              className="styled-small-radio items-center hover:cursor-pointer"
+              htmlFor="answer3"
+            >
+              <input
+                id="answer3"
+                type="radio"
+                name="answer"
+                value="3"
+                checked={answers[currentQuestion] === 3}
+                onChange={handleAnswerChange}
+              />
+              <span></span>
+            </label>
+            <label
+              className="styled-medium-radio-r items-center hover:cursor-pointer"
+              htmlFor="answer4"
+            >
+              <input
+                id="answer4"
+                type="radio"
+                name="answer"
+                value="4"
+                checked={answers[currentQuestion] === 4}
+                onChange={handleAnswerChange}
+              />
+              <span></span>
+            </label>
+            <label
+              className="styled-big-radio-r items-center hover:cursor-pointer"
+              htmlFor="answer5"
+            >
+              <input
+                id="answer5"
+                type="radio"
+                name="answer"
+                value="5"
+                checked={answers[currentQuestion] === 5}
+                onChange={handleAnswerChange}
+              />
+              <span></span>
+            </label>
+            <span className="ml-4">Never</span>
+          </div>
+          <div className="flex justify-center space-x-4">
+            <button
+              onClick={handlePreviousQuestion}
+              disabled={currentQuestion === 0}
+              className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+            >
+              <FaArrowLeft />
+            </button>
+            <button
+              onClick={handleNextQuestion}
+              disabled={
+                currentQuestion === questions.length - 1 ||
+                answers[currentQuestion] === -1
+              }
+              className="px-4 py-2 bg-blue-500 rounded disabled:opacity-50"
+            >
+              <FaArrowRight />
+            </button>
+          </div>
         </div>
       </div>
     </div>
