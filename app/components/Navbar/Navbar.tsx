@@ -29,21 +29,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <Disclosure as="nav" className="bg-lightpink navbar">
-      <>
+    // <Disclosure as="nav" className="bg-lightpink navbar">
+      <div className="sticky">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="relative flex h-20 items-center justify-between">
+          <div className="flex h-20 items-center justify-between">
             <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
               {/* LOGO */}
 
               <div className="flex flex-shrink-0 items-center">
-                <Image
-                  width={48}
-                  height={48}
-                  className="block w-12 lg:hidden"
-                  src={"/assets/logo/Logo.svg"}
-                  alt="Courses-Logo"
-                />
                 <Image
                   width={48}
                   height={48}
@@ -71,7 +64,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            {/* <Signdialog /> */}
+            <Signdialog />
             <Registerdialog />
             <div className="block md:hidden">
               <Bars3Icon
@@ -85,8 +78,8 @@ const Navbar = () => {
             </Drawer>
           </div>
         </div>
-      </>
-    </Disclosure>
+      </div>
+    // </Disclosure>
   );
 };
 

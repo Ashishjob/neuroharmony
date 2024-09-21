@@ -105,7 +105,7 @@ html:not([data-scroll="0"]) .navbar {
 
 .sidebar {
   width: 200px;
-  transition: width 0.5s;
+  /* transition: width 0.5s; */
 }
 
 .sidebar:hover {

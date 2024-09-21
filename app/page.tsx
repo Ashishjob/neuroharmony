@@ -1,13 +1,31 @@
-import Banner from './components/Banner/Banner';
-import Tabs from './components/Courses/Courses';
-import Mentor from './components/Mentor/Mentor';
-import Students from './components/Students/Students';
-import Newsletter from './components/Newsletter/Newsletter';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main>
-      <Banner />
+    <main className="banner-image">
+      <div className="relative px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl pt-16 sm:pt-40 sm:pb-24">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-75px md:4px">
+              Find your community <br /> with Neuroharmony
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-black">
+                Neuroharmony is a platform that connects you with your community
+                of like-minded individuals.
+            </p>
+          </div>
+          <div className="mx-auto max-w-4xl mt-24 pt-6 pb-8 px-6 lg:max-w-4xl lg:px-8 bg-white rounded-lg boxshadow">
+            <div className="grid gap-y-10 gap-x-6 lg:grid-cols-2 xl:gap-x-8">
+              <Link href="/quiz" className="bg-purple w-full hover:bg-[#CE90C8] text-white font-bold py-4 px-3 rounded">
+                Start by taking a quiz to match
+              </Link>
+              <Link href="/api/auth/login" className="bg-purple w-full hover:bg-[#CE90C8] text-white font-bold py-4 px-3 rounded">
+                Sign Up
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   )
 }
