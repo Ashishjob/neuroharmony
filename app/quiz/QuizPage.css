@@ -1,0 +1,58 @@
+/* QuizPage.css */
+.pastel-rainbow {
+  border-radius: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: linear-gradient(90deg, 
+    #ff9a9e 0%, 
+    #fad0c4 25%, 
+    #fad0c4 50%, 
+    #fbc2eb 50%, 
+    #a18cd1 75%, 
+    #a18cd1 100%);
+}
+
+.pastel-rainbow::-webkit-slider-runnable-track {
+  height: 0px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, 
+    white 0%,
+    white 25%,
+    white 50%,
+    white 75%,
+    white 100%);
+    z-index: 0;
+}
+
+.pastel-rainbow::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: #a18cd1 2px solid;
+  margin-top: -10px; /* Center the thumb */
+}
+
+.pastel-rainbow::-moz-range-track {
+  height: 8px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, 
+    #ff9a9e 0%, 
+    #fad0c4 25%, 
+    #fad0c4 50%, 
+    #fbc2eb 50%, 
+    #a18cd1 75%, 
+    #a18cd1 100%);
+}
+
+.pastel-rainbow::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
