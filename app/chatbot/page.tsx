@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const genAI = new GoogleGenerativeAI("AIzaSyDQ0vproRqHpeSGnHVI-hxZTyZLnHRrN98"); 
@@ -15,7 +15,7 @@ const Chatbot: React.FC = () => {
   const [conversationHistory, setConversationHistory] = useState<Message[]>([]);
   const [userInput, setUserInput] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  
   const sendMessage = async (message: string) => {
     setIsLoading(true);
 
