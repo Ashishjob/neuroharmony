@@ -17,7 +17,7 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
   { name: "Home", href: "/", current: true },
-  { name: "About Us", href: "#about-us", current: false },
+  { name: "About Us", href: "/about", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -70,7 +70,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <Signdialog />
+            {/* <Signdialog /> */}
             <Registerdialog />
             <div className="block md:hidden">
               <Bars3Icon
