@@ -1,9 +1,11 @@
 "use client";
+import { useRouter } from 'next/navigation';
 import React, { useState } from "react";
 import "./QuizPage.css"; // Import the CSS file
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const QuizPage: React.FC = () => {
+  const router = useRouter();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>(Array(20).fill(-1)); // Initialize with -1 to indicate unanswered questions
 
@@ -42,11 +44,40 @@ const QuizPage: React.FC = () => {
     }
   };
 
+  const handleRedirect = () => {
+    router.push('/dashboard'); // Change to your desired path
+  };
+
   const handleAnswerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const updatedAnswers = [...answers];
     updatedAnswers[currentQuestion] = parseInt(event.target.value);
     setAnswers(updatedAnswers);
   };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('/api/quiz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId: 'unique-user-id', // Replace with actual user ID
+          answers: answers,
+        }),
+      });
+  
+      if (!response.ok) {
+        console.error('Failed to submit answers');
+      } else {
+        console.log('Answers submitted successfully');
+        handleRedirect()
+      }
+    } catch (error) {
+      console.error('Error submitting answers:', error);
+    }
+  };
+  
 
   const progress = (currentQuestion / (questions.length - 1)) * 100;
 
@@ -86,7 +117,7 @@ const QuizPage: React.FC = () => {
           </p>
           <div className="mb-4 flex flex-row justify-center space-x-4 items-center">
             <label className="flex flex-row block items-center">
-              <span className="mr-4">Always</span>
+              <span className="mr-4">Never</span>
               <label
                 className="styled-big-radio-l items-center hover:cursor-pointer"
                 htmlFor="answer1"
@@ -158,7 +189,7 @@ const QuizPage: React.FC = () => {
               />
               <span></span>
             </label>
-            <span className="ml-4">Never</span>
+            <span className="ml-4">Always</span>
           </div>
           <div className="flex justify-center space-x-4">
             <button
@@ -179,7 +210,18 @@ const QuizPage: React.FC = () => {
               <FaArrowRight />
             </button>
           </div>
+           {currentQuestion === questions.length - 1 && (
+          <button 
+            onClick={handleSubmit} 
+            className="mt-4 px-4 py-2 bg-green-500 rounded"
+            disabled={Object.keys(answers).length < questions.length}
+            
+          >
+            Submit Quiz
+          </button>
+        )}
         </div>
+       
       </div>
     </div>
   );
