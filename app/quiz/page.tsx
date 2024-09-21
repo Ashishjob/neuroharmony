@@ -45,7 +45,7 @@ const QuizPage: React.FC = () => {
   };
 
   const handleRedirect = () => {
-    router.push('/dashboard'); // Change to your desired path
+    router.push('/dashboard/matching'); // Change to your desired path
   };
 
   const handleAnswerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
