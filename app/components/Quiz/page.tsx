@@ -26,7 +26,7 @@ const QuizPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Neurodivergent Quiz</h1>
+      <h1>The Quiz</h1>
       <input
         title='progress'
         type="range"

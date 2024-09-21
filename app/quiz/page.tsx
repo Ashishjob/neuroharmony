@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from 'react';
-import './QuizPage.css'; // Import the CSS file
+import React, { useState } from "react";
+import "./QuizPage.css"; // Import the CSS file
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const QuizPage: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -26,15 +27,15 @@ const QuizPage: React.FC = () => {
     "Do you find it difficult to adapt to changes?",
     "Do you have a strong interest in numbers, patterns, or statistics?",
     "Do you find it challenging to work in a team?",
-    "Do you have a strong preference for solitude?"
+    "Do you have a strong preference for solitude?",
   ];
 
   const handleNextQuestion = () => {
-    if (currentQuestion < questions.length - 1 && answers[currentQuestion] !== -1) {
+    if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     }
   };
-
+  
   const handlePreviousQuestion = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
@@ -52,90 +53,102 @@ const QuizPage: React.FC = () => {
   const progressBarStyle = {
     background: `linear-gradient(90deg, 
       #ff9a9e ${progress}%, 
-      #ffffff ${progress}%)`
+      #ffffff ${progress}%)`,
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Neurodivergent Quiz</h1>
+    <div className="p-4 h-screen">
+      <h1 className="text-4xl mb-4">The Quiz</h1>
       <input
-        title='progress'
+        title="progress"
         type="range"
         min="0"
         max="100"
         value={progress}
         readOnly
-        className='w-full h-4 mb-4 transition-all duration-500 ease-in-out pastel-rainbow'
+        className="w-full h-4 mb-4 transition-all duration-500 ease-in-out pastel-rainbow"
         style={progressBarStyle}
       />
-      <div className="text-center">
-        <p className="mb-4">{questions[currentQuestion]}</p>
-        <div className="mb-4 flex justify-center space-x-4">
-          <label className="block">
-            <input
-              type="radio"
-              name="answer"
-              value="1"
-              checked={answers[currentQuestion] === 1}
-              onChange={handleAnswerChange}
-            />
-            Very Often
+      <div className="text-center w-full py-32">
+        <p className="mb-4 items-center text-3xl mt-24">{questions[currentQuestion]}</p>
+        <div className="mb-4 flex flex-row justify-center space-x-4 items-center">
+          <label className="flex flex-row block items-center">
+            <span className="mr-4">Always</span>
+            <label className="styled-big-radio-l items-center hover:cursor-pointer" htmlFor="answer1">
+              <input
+                id="answer1"
+                type="radio"
+                name="answer"
+                value="1"
+                checked={answers[currentQuestion] === 1}
+                onChange={handleAnswerChange}
+              />
+              <span></span>
+            </label>
           </label>
-          <label className="block">
+          <label className="styled-medium-radio-l items-center hover:cursor-pointer" htmlFor="answer2">
             <input
+              id="answer2"
               type="radio"
               name="answer"
               value="2"
               checked={answers[currentQuestion] === 2}
               onChange={handleAnswerChange}
             />
-            Often
+            <span></span>
           </label>
-          <label className="block">
+          <label className="styled-small-radio items-center hover:cursor-pointer" htmlFor="answer3">
             <input
+              id="answer3"
               type="radio"
               name="answer"
               value="3"
               checked={answers[currentQuestion] === 3}
               onChange={handleAnswerChange}
             />
-            Sometimes
+            <span></span>
           </label>
-          <label className="block">
+          <label className="styled-medium-radio-r items-center hover:cursor-pointer" htmlFor="answer4">
             <input
+              id="answer4"
               type="radio"
               name="answer"
               value="4"
               checked={answers[currentQuestion] === 4}
               onChange={handleAnswerChange}
             />
-            Rarely
+            <span></span>
           </label>
-          <label className="block">
+          <label className="styled-big-radio-r items-center hover:cursor-pointer" htmlFor="answer5">
             <input
+              id="answer5"
               type="radio"
               name="answer"
               value="5"
               checked={answers[currentQuestion] === 5}
               onChange={handleAnswerChange}
             />
-            Never
+            <span></span>
           </label>
+          <span className="ml-4">Never</span>
         </div>
         <div className="flex justify-center space-x-4">
-          <button 
-            onClick={handlePreviousQuestion} 
+          <button
+            onClick={handlePreviousQuestion}
             disabled={currentQuestion === 0}
             className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
           >
-            Previous
+            <FaArrowLeft />
           </button>
-          <button 
-            onClick={handleNextQuestion} 
-            disabled={currentQuestion === questions.length - 1 || answers[currentQuestion] === -1}
+          <button
+            onClick={handleNextQuestion}
+            disabled={
+              currentQuestion === questions.length - 1 ||
+              answers[currentQuestion] === -1
+            }
             className="px-4 py-2 bg-blue-500 rounded disabled:opacity-50"
           >
-            Next
+            <FaArrowRight />
           </button>
         </div>
       </div>

@@ -56,3 +56,93 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+.styled-big-radio-l input[type='radio'] {
+  display: none;
+}
+
+.styled-big-radio-l span {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #8aeb9f; /* Change this to your desired border color */
+}
+
+.styled-big-radio-l input[type='radio']:checked + span {
+  background: #8aeb9f; /* Change this to your desired color when selected */
+}
+
+.styled-medium-radio-l input[type='radio'] {
+  display: none;
+}
+
+.styled-medium-radio-l span {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #8aeb9f; /* Change this to your desired border color */
+}
+
+.styled-medium-radio-l input[type='radio']:checked + span {
+  background: #8aeb9f; /* Change this to your desired color when selected */
+}
+
+.styled-small-radio input[type='radio'] {
+  display: none;
+}
+
+.styled-small-radio span {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #bfb9c4; /* Change this to your desired border color */
+}
+
+.styled-small-radio input[type='radio']:checked + span {
+  background: #bfb9c4; /* Change this to your desired color when selected */
+}
+
+.styled-big-radio-r input[type='radio'] {
+  display: none;
+}
+
+.styled-big-radio-r span {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #b1d6f2; /* Change this to your desired border color */
+}
+
+.styled-big-radio-r input[type='radio']:checked + span {
+  background: #b1d6f2; /* Change this to your desired color when selected */
+}
+
+.styled-medium-radio-r input[type='radio'] {
+  display: none;
+}
+
+.styled-medium-radio-r span {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #b1d6f2; /* Change this to your desired border color */
+}
+
+.styled-medium-radio-r input[type='radio']:checked + span {
+  background: #b1d6f2; /* Change this to your desired color when selected */
+}

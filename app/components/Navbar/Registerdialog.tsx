@@ -19,12 +19,12 @@ const Register = () => {
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto  sm:pr-0">
                 <div className='hidden md:block'>
                     <button className="bg-purple hover:bg-purple hover:text-white text-white text-15px font-medium ml-8 py-4 px-5 rounded" onClick={openModal}>
-                        Register
+                    <a href="/api/auth/login">Login / Sign Up</a>
                     </button>
                 </div>
             </div>
 
-            <Transition appear show={isOpen} as={Fragment}>
+            {/* <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
@@ -141,7 +141,7 @@ const Register = () => {
                         </div>
                     </div>
                 </Dialog>
-            </Transition>
+            </Transition> */}
         </>
     )
 }
