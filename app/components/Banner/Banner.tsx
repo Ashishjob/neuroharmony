@@ -19,11 +19,11 @@ const Banner = () => {
           <div className="mx-auto max-w-4xl mt-24 pt-6 pb-8 px-6 lg:max-w-4xl lg:px-8 bg-white rounded-lg boxshadow">
             <div className="grid gap-y-10 gap-x-6 lg:grid-cols-2 xl:gap-x-8">
               <Link href="/quiz">
-                <button className="bg-purple w-full hover:bg-pruple text-white font-bold py-4 px-3 rounded">
+                <button className="bg-purple w-full hover:bg-[#CE90C8] text-white font-bold py-4 px-3 rounded">
                   Start by taking a quiz to match
                 </button>
               </Link>
-              <button className="bg-purple w-full hover:bg-pruple text-white font-bold py-4 px-3 rounded">
+              <button className="bg-purple w-full hover:bg-[#CE90C8] text-white font-bold py-4 px-3 rounded">
                 Sign Up
               </button>
             </div>
