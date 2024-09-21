@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Typewriter from 'typewriter-effect';
 
