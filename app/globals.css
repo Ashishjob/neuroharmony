@@ -98,3 +98,20 @@ html:not([data-scroll="0"]) .navbar {
 .space-links:hover {
   letter-spacing: 1px;
 }
+
+.dashboard {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  transition: width 0.5s;
+}
+
+.sidebar:hover {
+  width: 50px;
+}
+
+.content {
+  flex-grow: 1;
+}

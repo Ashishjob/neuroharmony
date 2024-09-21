@@ -18,6 +18,7 @@ interface NavigationItem {
 const navigation: NavigationItem[] = [
   { name: "Home", href: "/", current: true },
   { name: "About Us", href: "/about", current: false },
+  { name: "Dashboard", href: "/dashboard", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -58,7 +59,7 @@ const Navbar = () => {
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        item.current ? " text-purple" : "hover:text-purple",
+                        item.current ? " text-black" : "hover:text-purple",
                         "px-3 py-4 text-15px font-medium space-links"
                       )}
                       aria-current={item.href ? "page" : undefined}
