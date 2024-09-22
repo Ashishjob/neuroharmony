@@ -1,11 +1,13 @@
 "use client";
 import { useRouter } from 'next/navigation';
+import { useUser } from "@auth0/nextjs-auth0/client";
 import React, { useState } from "react";
 import "./QuizPage.css"; // Import the CSS file
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const QuizPage: React.FC = () => {
   const router = useRouter();
+  const { user, error, isLoading } = useUser();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>(Array(20).fill(-1)); // Initialize with -1 to indicate unanswered questions
 
@@ -62,7 +64,7 @@ const QuizPage: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userId: 'unique-user-id', // Replace with actual user ID
+          userId: user?.name, // Replace with actual user ID
           answers: answers,
         }),
       });
@@ -88,6 +90,8 @@ const QuizPage: React.FC = () => {
   };
 
   return (
+    <>
+    {user ? (
     <div
       className="p-4 h-screen"
       style={{
@@ -223,7 +227,8 @@ const QuizPage: React.FC = () => {
         </div>
        
       </div>
-    </div>
+    </div>) : (<div className='min-h-screen flex flex-row justify-center items-center w-full bg-[#EAD1CA]'> Log In or Sign Up to Take the Quiz!! </div>)}
+    </>
   );
 };
 

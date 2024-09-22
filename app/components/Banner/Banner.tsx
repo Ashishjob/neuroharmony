@@ -3,9 +3,10 @@
 import Link from 'next/link';
 import { useUser } from "@auth0/nextjs-auth0/client";
 
-export default function Home() {
 
+const Banner = () => {
   const { user, error, isLoading } = useUser();
+  console.log(user)
   return (
     <main className="banner-image">
       <div className="relative px-6 lg:px-8">
@@ -21,7 +22,7 @@ export default function Home() {
           </div>
           <div className="mx-auto max-w-4xl mt-24 pt-6 pb-8 px-6 lg:max-w-4xl lg:px-8 bg-white rounded-lg boxshadow">
             <div className="grid gap-y-10 gap-x-6 lg:grid-cols-2 xl:gap-x-8">
-            <Link href="/quiz">
+              <Link href="/quiz">
                 <button className="bg-purple w-full hover:bg-[#CE90C8] text-white font-bold py-4 px-3 rounded">
                   Start by taking a quiz to match
                 </button>
@@ -34,5 +35,7 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
-}
+  );
+};
+
+export default Banner;
