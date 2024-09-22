@@ -22,6 +22,8 @@
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "express": "^4.21.0",
+    "framer-motion": "^11.5.6",
+    "lucide-react": "^0.445.0",
     "mongoose": "^8.6.3",
     "next": "^14.2.13",
     "postcss": "8.4.23",
@@ -32,6 +34,7 @@
     "react-slick": "^0.29.0",
     "react-typing": "^1.0.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.13",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
     "typewriter-effect": "^2.21.0"

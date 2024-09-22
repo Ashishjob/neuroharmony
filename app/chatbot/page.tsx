@@ -79,7 +79,7 @@ const Chatbot: React.FC = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
+      className="flex flex-col items-center justify-center h-[100vh] bg-cover bg-center"
     >
       {" "}
       <div className="p-6 bg-white rounded-lg shadow-lg w-full w-1/2 -mt-12">

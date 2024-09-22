@@ -31,7 +31,7 @@ function MatchPage() {
   };
 
   return (
-    <div className="flex flex-col items-center p-8 min-h-screen bg-[#EAD1CA]">
+    <div className="flex flex-col items-center p-8 h-[100vh] bg-[#EAD1CA]">
       <h1 className="mt-4 text-2xl font-bold">{users[currentIndex]?.name}</h1>
       <p className="mt-2 text-center">{users[currentIndex]?.bio}</p>
       <Image

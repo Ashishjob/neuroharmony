@@ -4,6 +4,8 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import React, { useState } from "react";
 import "./QuizPage.css"; // Import the CSS file
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const QuizPage: React.FC = () => {
   const router = useRouter();
@@ -221,13 +223,23 @@ const QuizPage: React.FC = () => {
             disabled={Object.keys(answers).length < questions.length}
             
           >
-            Submit Quiz
+            <Link href="/dashboard">Submit Quiz</Link>
           </button>
         )}
         </div>
        
       </div>
-    </div>) : (<div className='min-h-screen flex flex-row justify-center items-center w-full bg-[#EAD1CA]'> Log In or Sign Up to Take the Quiz!! </div>)}
+    </div>) : (<div className="mh-[100vh] flex flex-col justify-center items-center w-full bg-gradient-to-r from-[#EAD1CA] to-[#F2E2DC]">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-white p-8 rounded-lg shadow-lg text-center"
+      >
+        <h2 className="text-3xl font-bold mb-4 text-black">Ready to Begin?</h2>
+        <p className="text-xl text-black">Log in or sign up to take the quiz!</p>
+      </motion.div>
+    </div>)}
     </>
   );
 };

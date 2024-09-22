@@ -17,13 +17,6 @@ const Signin = () => {
     <>
       <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <div className="hidden md:block">
-          <button
-            type="button"
-            className="text-15px font-medium space-links"
-            onClick={openModal}
-          >
-            <a href="/api/auth/login">Login</a>
-          </button>
         </div>
       </div>
 
@@ -42,7 +35,7 @@ const Signin = () => {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex h-[100vh] items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -53,7 +46,7 @@ const Signin = () => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                  <div className="flex h-[100vh]items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                     <div className="w-full max-w-md space-y-8">
                       <div>
                         <img

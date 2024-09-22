@@ -63,7 +63,7 @@ const Register = () => {
               className="bg-purple hover:bg-purple hover:text-white text-white text-15px font-medium ml-8 py-4 px-5 rounded"
               onClick={openModal}
             >
-              <a href="/api/auth/login">Sign Up</a>
+              <a href="/api/auth/login">Log In / Sign Up</a>
             </button>
           </div>
         </div>

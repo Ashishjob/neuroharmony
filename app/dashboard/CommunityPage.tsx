@@ -11,7 +11,7 @@ const communities = [
 
 function CommunityPage() {
   return (
-    <div className="flex flex-col bg-[#EAD1CA] min-h-screen">
+    <div className="flex flex-col bg-[#EAD1CA] h-[100vh]">
       <div className="flex flex-wrap w-full">
         {communities.map((community, index) => (
           <button 
