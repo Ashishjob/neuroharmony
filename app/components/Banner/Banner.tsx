@@ -4,11 +4,9 @@ import Link from 'next/link';
 import { useUser } from "@auth0/nextjs-auth0/client";
 
 
-
-
-
 const Banner = () => {
   const { user, error, isLoading } = useUser();
+  console.log(user)
   return (
     <main className="banner-image">
       <div className="relative px-6 lg:px-8">

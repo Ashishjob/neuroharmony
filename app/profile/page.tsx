@@ -17,7 +17,6 @@ function ProfilePage() {
       <img className="w-48 h-48 rounded-full object-cover" src="/assets/pfp.jpeg" alt="Profile" />
       <h1 className="mt-4 text-2xl font-bold">{profileData.name}</h1>
       <p className="mt-2 text-center">{profileData.bio}</p>
-      <p className="mt-2 text-center">Quiz Score: {profileData.score}</p>
       <div className="mt-2 flex flex-wrap justify-center">
         {profileData.tags.map((tag, index) => (
           <span key={index} className="m-1 p-1 bg-blue-200 rounded-full">{tag}</span>
