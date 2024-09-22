@@ -1,8 +1,14 @@
 "use client";
 
 import Link from 'next/link';
+import { useUser } from "@auth0/nextjs-auth0/client";
+
+
+
+
 
 const Banner = () => {
+  const { user, error, isLoading } = useUser();
   return (
     <main className="banner-image">
       <div className="relative px-6 lg:px-8">
@@ -24,7 +30,7 @@ const Banner = () => {
                 </button>
               </Link>
               <button className="bg-purple w-full hover:bg-[#CE90C8] text-white font-bold py-4 px-3 rounded">
-                <a href="/api/auth/login">Sign Up</a>
+                {user ? (<a href="/profile">Customize Profile</a>) : (<a href="/api/auth/login">Sign Up</a>)}
               </button>
             </div>
           </div>
