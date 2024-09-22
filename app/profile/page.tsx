@@ -48,7 +48,7 @@ function ProfilePage() {
 
 
   return (
-    <div className="flex flex-col items-center p-8">
+    <div className="flex flex-col items-center p-8 bg-[#EAD1CA] h-screen">
       <img className="w-48 h-48 rounded-full object-cover" src="/assets/pfp.jpeg" alt="Profile" />
       <h1 className="mt-4 text-2xl font-bold">{profileData.name}</h1>
       <p className="mt-2 text-center">{profileData.bio}</p>
@@ -93,7 +93,7 @@ function ProfilePage() {
           className="block w-full mb-2 p-2 border rounded"
           required
         />
-        <button type="submit" className="mt-2 px-4 py-2 bg-blue-500 text-white rounded">
+        <button type="submit" className="mt-2 mx-auto w-full py-2 bg-blue-500 text-black rounded">
           Save Profile
         </button>
       </form>

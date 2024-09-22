@@ -3,6 +3,13 @@ import React, { useState, useRef, useEffect } from "react";
 const users = [
   {
     id: 1,
+    name: "Ashish J.",
+    avatar: "/assets/pfp.jpeg",
+    messages: [
+    ],
+  },
+  {
+    id: 2,
     name: "Jorell P.",
     avatar: "/assets/owl-pfp.webp",
     messages: [
@@ -17,7 +24,7 @@ const users = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Andrew D.",
     avatar: "/assets/pfp.jpeg",
     messages: [

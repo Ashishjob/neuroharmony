@@ -1,6 +1,7 @@
 "use client";
 import React, { ReactNode, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Image from 'next/image';
 
 function MatchPage() {
   const [users, setUsers] = useState<{
@@ -30,10 +31,16 @@ function MatchPage() {
   };
 
   return (
-    <div className="flex flex-col items-center p-8 h-screen bg-[#EAD1CA]">
-      <img className="w-48 h-48 rounded-full object-cover" src={users[currentIndex]?.profilePicture} alt="Profile" />
+    <div className="flex flex-col items-center p-8 min-h-screen bg-[#EAD1CA]">
       <h1 className="mt-4 text-2xl font-bold">{users[currentIndex]?.name}</h1>
       <p className="mt-2 text-center">{users[currentIndex]?.bio}</p>
+      <Image
+        src="/assets/adobe-portfolio.svg"
+        alt="Profile"
+        width={200}
+        height={200}
+        className="w-3/4 rounded-xl"
+        />
       <div className="mt-4 flex w-full justify-center">
         <button className="m-2 p-2 bg-red text-white w-full rounded-xl" onClick={handleDecline}>Decline</button>
         <button className="m-2 p-2 bg-green text-white w-full rounded-xl" onClick={handleMatch}>Match</button>
