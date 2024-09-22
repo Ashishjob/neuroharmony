@@ -71,7 +71,7 @@ const AboutUs: React.FC = () => {
             Our platform features an advanced LLM-powered AI friend, designed to help
             neurodivergent individuals navigate social situations with confidence.
             This AI companion provides a safe space for practicing social interactions,
-            offering guidance and support tailored to each user's unique needs.
+            offering guidance and support tailored to each user&apos;s unique needs.
           </p>
         </Section>
         <Section
@@ -96,7 +96,7 @@ const AboutUs: React.FC = () => {
           <p>
             We envision a world where neurodiversity is celebrated, and every individual
             has the tools and support to thrive in social settings. Through technology
-            and compassion, we're working towards a more inclusive and understanding society.
+            and compassion, we&apos;re working towards a more inclusive and understanding society.
           </p>
         </Section>
       </Content>

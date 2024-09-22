@@ -18,7 +18,7 @@ const users = [
       { sender: "Jorell", message: "How are you?", timestamp: "10:02 AM" },
       {
         sender: "You",
-        message: "I'm good, thanks for asking.",
+        message: "Good, thanks for asking.",
         timestamp: "10:03 AM",
       },
     ],
@@ -30,7 +30,7 @@ const users = [
     messages: [
       { sender: "Andrew", message: "Hi", timestamp: "11:00 AM" },
       { sender: "You", message: "Hello, Andrew!", timestamp: "11:01 AM" },
-      { sender: "Andrew", message: "What's up?", timestamp: "11:02 AM" },
+      { sender: "Andrew", message: "Whats up?", timestamp: "11:02 AM" },
       {
         sender: "You",
         message: "Not much, just working.",

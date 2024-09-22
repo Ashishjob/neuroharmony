@@ -6,7 +6,7 @@ import Typewriter from 'typewriter-effect';
 const genAI = new GoogleGenerativeAI("AIzaSyDQ0vproRqHpeSGnHVI-hxZTyZLnHRrN98");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 const missionStatement =
-  "Your mission is to help neurodivergent users practice and improve social skills by acting as their friend. Don't make super long responses";
+  "Your mission is to help neurodivergent users practice and improve social skills by acting as their friend. Do not make super long responses, and keep everything spelled correctly.";
 
 interface Message {
   role: "user" | "assistant";
@@ -106,8 +106,8 @@ const Chatbot: React.FC = () => {
               <img
                 src={
                   message.role === "user"
-                    ? "/assets/pfp.jpeg" // replace with the path to the user's profile picture
-                    : "/assets/owl-pfp.webp" // replace with the path to the assistant's profile picture
+                    ? "/assets/pfp.jpeg"
+                    : "/assets/owl-pfp.webp"
                   }
                   alt={`${message.role} profile`}
                   className="h-8 w-8 rounded-full object-cover"
