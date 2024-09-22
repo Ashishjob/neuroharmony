@@ -79,11 +79,7 @@ const Chatbot: React.FC = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/assets/banner/chatbot-background.jpeg')",
-        objectFit: "cover",
-      }}
+      className="flex flex-col items-center justify-center bg-[#EAD1CA] min-h-screen"
     >
       {" "}
       <div className="p-6 bg-white rounded-lg shadow-lg w-1/2 -mt-12">

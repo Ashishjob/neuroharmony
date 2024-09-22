@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Typewriter from 'typewriter-effect';
 
@@ -80,10 +80,6 @@ const Chatbot: React.FC = () => {
   return (
     <div
       className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/assets/banner/chatbot-background.jpeg')",
-        objectFit: "cover",
-      }}
     >
       {" "}
       <div className="p-6 bg-white rounded-lg shadow-lg w-full w-1/2 -mt-12">
