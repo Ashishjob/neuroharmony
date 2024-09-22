@@ -1,11 +1,12 @@
 import { dbConnect } from '@/app/lib/db';
+import { NextApiRequest } from 'next';
 import { NextResponse } from 'next/server';
 
-export async function POST(req) {
-  const { userId, answers } = await req.json();
+export async function POST(req: NextApiRequest) {
+  const { userId, answers } = await req.body.json();
   const con = await dbConnect();
-  const db = con.connection.db;
-  const collection = db.collection('quiz'); 
+  const db = con.connection.db!;
+  const collection = db.collection('user'); 
 
   const questions = [
     "Do you find it difficult to focus on tasks?",
@@ -30,17 +31,19 @@ export async function POST(req) {
     "Do you have a strong preference for solitude?",
   ];
 
-  const answerObject = {
+  const userObject = {
     userId,
     timestamp: new Date(),
+    quiz:{}
   };
 
+
   questions.forEach((question, index) => {
-    answerObject[question] = answers[index]; // Map each question to its corresponding answer
+    (userObject.quiz as any)[question] = answers[index]; // Map each question to its corresponding answer
   });
 
   try {
-    const result = await collection.insertOne(answerObject);
+    const result = await collection.findOneAndReplace({userId}, userObject, {upsert: true})
 
     return new NextResponse(JSON.stringify({ message: 'Quiz answers stored successfully', result }), { status: 200 });
   } catch (error) {
