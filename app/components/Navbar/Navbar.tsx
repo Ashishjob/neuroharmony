@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     // <Disclosure as="nav" className="bg-lightpink navbar">
-      <div className="sticky">
+      <div className="sticky border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
